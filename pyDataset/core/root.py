@@ -5,22 +5,13 @@ from typing import Optional
 from pydantic import PrivateAttr
 from pydantic import Field
 from typing import List
-from typing import Optional
 from .author import Author
 from .parameter import Parameter
 
 
 class Root(sdRDM.DataModel):
 
-    __url__: Optional[str] = PrivateAttr(
-        default="git://github.com/JR-1991/sdrdm-template.git"
-    )
-    __commit__: Optional[str] = PrivateAttr(
-        default="4de08981d487b8f67e2258e55b6b8462b5257e99"
-    )
-
-    """This is the root of the data model and contains all objects defined in this example. While its good practice to have a single root, you can define as many roots as you like. Furthermore, the name does not have to be ```Root``` and can be any other name.
-"""
+    """This is the root of the data model and contains all objects defined in this example. While its good practice to have a single root, you can define as many roots as you like. Furthermore, the name does not have to be ```Root``` and can be any other name."""
 
     description: str = Field(
         ...,
@@ -50,17 +41,24 @@ class Root(sdRDM.DataModel):
         default_factory=list,
     )
 
+    __url__: Optional[str] = PrivateAttr(
+        default="git://github.com/JR-1991/sdrdm-template.git"
+    )
+    __commit__: Optional[str] = PrivateAttr(
+        default="de61a2be05ffb282eb0cd0193643b69113af1302"
+    )
+
     def add_to_authors(
         self,
         name: str,
-        affiliation: Optional[str] = None,
+        affiliation: str,
     ) -> None:
         """
         Adds an instance of 'Author' to the attribute 'authors'.
 
         Args:
             name (str): Full name including given and family name.
-            affiliation (Optional[str]): To which organization the author is affiliated to. Defaults to None
+            affiliation (str): To which organization the author is affiliated to.
         """
 
         self.authors.append(
