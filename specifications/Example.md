@@ -35,9 +35,9 @@ In the following an example data model is defined using above rules. Feel free t
 
 This is the place where you can describe the complete module/dataset and give information about all the details. Markdown offers a convenient way to enable as much space as needed to elucidate purpose and capabilities of your data model.
 
-### Root
+### Model
 
-This is the root of the data model and contains all objects defined in this example. While its good practice to have a single root, you can define as many roots as you like. Furthermore, the name does not have to be ```Root``` and can be any other name.
+This is the root of the data model and contains all objects defined in this example. While its good practice to have a single root, you can define as many roots as you like. Furthermore, the name does not have to be ```Model``` and can be any other name.
 
 - __description*__
   - Type: string
