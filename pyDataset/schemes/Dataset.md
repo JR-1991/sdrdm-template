@@ -1,9 +1,9 @@
 ```mermaid
 classDiagram
-    Root *-- Author
-    Root *-- Parameter
+    Model *-- Author
+    Model *-- Parameter
     
-    class Root {
+    class Model {
         +string description*
         +string title*
         +string subject*
